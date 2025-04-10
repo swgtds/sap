@@ -1,0 +1,45 @@
+1) write SE11
+OR SAP Menu >> Tools >> ABAP Workbench >> Developement >> ABAP Dictionary
+
+**DOMAIN**
+Order number
+2) Domain >> {Put a name}(Z_OrderN_217) >> Create >> Short Desciption(Order no.) >> Data Type(NUMC) >> No. characters(10) >> Decimal Place(0) 
+>> Check >> Save >> Enter Package Name(Z_SWAGATA217_GNIT) >> Save >> Tick >> Activate
+
+3)Do the same thing but for Order Date 
+Domain >> {Put a name}(Z_OrderD_217) >> Create >> Short Desciption(Order date.) >> Data Type(DATS) >> No. characters(8) >> Decimal Place(0) 
+>> Check >> Save >> Enter Package Name(Z_SWAGATA217_GNIT) >> Save >> Tick >> Activate
+ 
+4) Do the same thing but for Pyment mode 
+Domain >> {Put a name}(Z_Pmode_217) >> Create >> Short Desciption(Pay mode) >> Data Type(CHAR) >> No. characters(1) >> Decimal Place(0) 
+>> Check >> Save >> Enter Package Name(Z_SWAGATA217_GNIT) >> Save >> Tick >> Activate
+ 
+**DATA TYPE**
+Order number
+1) Data type >> {Put a name}(Z_DE_OrderN_217) >> Data Element >> Create >> Short Desciption(Order no.) 
+>> Elementary Type >> Domain >> Z_OrderN_217 
+>> Field Label >> {LENGTH}         Short(10) >> Medium(20) >> Long(30) >> Heading(60) 
+               >> {Field Label}    order no. >> order no. >> order no. >> order no.
+>> Check >> Save >> Enter Package Name(Z_SWAGATA217_GNIT) >> Save >> Tick >> Activate
+
+2) Do the same thing but for Order Date
+Data type >> {Put a name}(Z_DE_OrderD_217) >> Data Element >> Create >> Short Desciption(Order date) 
+>> Elementary Type >> Domain >> Z_OrderN_217 
+>> Field Label >> {LENGTH}         Short(10) >> Medium(20) >> Long(30) >> Heading(60) 
+               >> {Field Label}    order date. >> order date. >> order date. >> order date.
+>> Check >> Save >> Enter Package Name(Z_SWAGATA217_GNIT) >> Save >> Tick >> Activate
+
+3) Do the same thing but for Payment mode
+Data type >> {Put a name}(Z_DE_PMode_217) >> Data Element >> Create >> Short Desciption(Order date) 
+>> Elementary Type >> Domain >> Z_OrderN_217 
+>> Field Label >> {LENGTH}         Short(10) >> Medium(20) >> Long(30) >> Heading(60) 
+               >> {Field Label}    Payment mode >> Payment mode >> Payment mode >> Payment mode
+>> Check >> Save >> Enter Package Name(Z_SWAGATA217_GNIT) >> Save >> Tick >> Activate
+
+**DATABASE TABLE**
+ZORTABLE217
+Short Desciption(Order Table) 
+Delivery and Maintainance >> Delivery Class(A) >> 
+{Fields} >> FIELD (MNDT) DATA ELEMENT(MNDT) >> ENTER
+            FIELD (ORDERN) DATA ELEMENT(Z_DE_OrderN_217) >> ENTER
+            FIELD (ORDERD) DATA ELEMENT(Z_DE_OrderD_217) >> ENTER
