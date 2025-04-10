@@ -1,0 +1,6 @@
+REPORT Z_SREEMOYEE218_ADDITION.
+Data:a type I VALUE 100,
+b type I VALUE 50,
+c type I.
+c = a + b.
+write: 'sum of two numbers',c.

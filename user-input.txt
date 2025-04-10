@@ -1,0 +1,19 @@
+DATA : number TYPE i.
+PARAMETERS : p_num1 TYPE i.
+number = p_num1.
+
+
+CASE number.
+  WHEN 0.
+    WRITE : 'The number is zero'.
+  WHEN OTHERS.
+    IF number > 0 AND number MOD 2 = 0.
+      WRITE : 'The number is greater than zero and even'.
+    ELSEIF number > 0 AND NOT number MOD 2 = 0.
+      WRITE : 'The number is greater than zero and odd'.
+    ELSEIF number < 0 AND NOT number MOD 2 = 0.
+      WRITE : 'The number is less than zero and odd'.
+    ELSEIF number < 0 AND number MOD 2 = 0.
+      WRITE : 'The number is less than zero and even'.
+    ENDIF.
+ENDCASE.

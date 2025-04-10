@@ -1,0 +1,33 @@
+DATA  c TYPE i.
+SELECTION-SCREEN BEGIN OF BLOCK b1 WITH FRAME TITLE TEXT-005.
+PARAMETERS: a TYPE i,
+            b TYPE i OBLIGATORY.
+SELECTION-SCREEN END OF BLOCK b1.
+
+SELECTION-SCREEN BEGIN OF BLOCK b2 WITH FRAME TITLE TEXT-006.
+PARAMETERS: rad1 RADIOBUTTON GROUP grp1,
+            rad2 RADIOBUTTON GROUP grp1,
+            rad3 RADIOBUTTON GROUP grp1,
+            rad4 RADIOBUTTON GROUP grp1,
+            rad5 RADIOBUTTON GROUP grp1 DEFAULT 'X'.
+SELECTION-SCREEN END OF BLOCK b2.
+
+IF rad1 EQ 'x'.
+  c = a + b.
+  WRITE: 'Sum of two numbers',c.
+
+ELSEIF rad2 EQ 'x'.
+  c = a - b.
+  write: 'Subtraction of two numbers',c.
+
+ELSEIF rad3 EQ 'x'.
+  c = a * b.
+  WRITE: 'Multiplication of two numbers',c.
+
+ELSEIF rad4 EQ 'x'.
+  c = a / b.
+  WRITE: 'Division of two numbers',c.
+
+ELSE.
+  MESSAGE 'no radio button is selected' TYPE 'e'.
+ENDIF.
